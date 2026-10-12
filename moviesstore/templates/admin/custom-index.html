@@ -1,0 +1,12 @@
+{% extends 'admin/index.html' %}
+
+{% block content %}
+  <h2>Purchase Reports</h2>
+  <p>
+    <a href="{% url 'admin_top_buyers' %}">
+    Top Buyers and Purhcases
+    </a>
+  </p>
+
+  {{ block.super }}
+{% endblock %} 

@@ -18,8 +18,10 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
+from cart.admin import top_buyers
 
 urlpatterns = [
+    path('admin/top-buyers', admin.site.admin_view(top_buyers), name='admin_top_buyers'),
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
     path('movies/', include('movies.urls')),

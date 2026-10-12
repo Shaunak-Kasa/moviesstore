@@ -1,0 +1,34 @@
+{% extends 'admin/base_site.html' %}
+
+{%block content%}
+<div id="content-main">
+    <p>test</p>
+<table>
+<thead>
+    <tr>
+    <th scope="col">Rank</th>
+    <th scope="col">Name</th>
+    <th scope="col">Movies Purchased</th>
+    <th scope="col">Purchases</th>
+    </tr>
+</thead>
+<tbody>
+    {% for buyer in buyers %}
+    <tr>
+    <td>{{ forloop.counter }}</td>
+    <td>{{ buyer.username }}</td>
+    <td>{{ buyer.movies_purchased }}</td>
+    <td>
+        {% for purhcase in buyer.purchases %}
+        <div> {{ purhcase.movie }} x {{ purhcase.quantity }}
+        (Order #{{ purhcase.order_id }})</div>
+        {% endfor %}
+    </td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+
+</div>
+
+{%endblock%}
